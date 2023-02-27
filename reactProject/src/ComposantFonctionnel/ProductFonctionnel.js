@@ -2,12 +2,11 @@ import Card from "react-bootstrap/Card";
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 
-
 function ProductFonctionnel(props) {
     const [product,setproduct]=useState(props.product)
-    const [like,setlike]=useState(props.product.like)
+    //const [like,setlike]=useState(props.product.like)
     const [quantity,setquantity]=useState(props.product.quantity)
-    
+    const [like,setlike]=useState(props.product.like)
     
     // addLikes = () => {
     //     this.setState((prevState) => ({
@@ -28,12 +27,13 @@ function ProductFonctionnel(props) {
      <Card className={styleClass}>
               <Card.Img variant="top" src={require("../assets/images/" + props.product.img)} />
               <Card.Body>
-                <Card.Title> {props.product.name}</Card.Title>
+              <Card.Title> {this.state.product.name}</Card.Title>
+               
                 <Card.Text>{props.product.description}</Card.Text>
                 <Card.Text> {props.product.price} </Card.Text>
                 <Card.Text>Likes :{like}</Card.Text>
                 <Card.Text>quantité :{quantity}</Card.Text>
-                <Button variant="primary" onClick={addLikes}>Like</Button>{' '}
+                <Button variant="primary" onClick={addLikes}>Like</Button>
                 <Button variant="primary" onClick={()=>props.buyFunction(product,updateQuantity)} disabled={quantity===0}>Buy</Button>
               </Card.Body>
       </Card>

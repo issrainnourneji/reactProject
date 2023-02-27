@@ -1,6 +1,8 @@
 import Card from "react-bootstrap/Card";
 import { Component } from "react";
 import Button from 'react-bootstrap/Button';
+
+import {NavLink } from 'react-router-dom';
 class Product extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,8 @@ class Product extends Component {
         <Card>
               <Card.Img variant="top" src={require("../assets/images/" + this.state.product.img)} />
               <Card.Body>
-                <Card.Title> {this.state.product.name}</Card.Title>
+              <NavLink to ="/detailss"><Card.Title> {this.state.product.name}</Card.Title></NavLink>
+                
                 <Card.Text>{this.state.product.description}</Card.Text>
                 <Card.Text> {this.state.product.price} </Card.Text>
                 <Card.Text>Likes :{this.state.product.like}</Card.Text>
